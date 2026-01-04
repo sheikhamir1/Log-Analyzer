@@ -1,0 +1,33 @@
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c99 -O2 -I./include
+LDFLAGS = 
+TARGET = loganalyzer
+SRCDIR = src
+OBJDIR = obj
+INCDIR = include
+LOGDIR = logs
+
+SOURCES = $(wildcard $(SRCDIR)/*.c)
+OBJECTS = $(SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+
+# Create directories if they don't exist
+$(shell mkdir -p $(OBJDIR) $(LOGDIR))
+
+all: $(TARGET)
+
+$(TARGET): $(OBJECTS)
+	$(CC) $(OBJECTS) -o $(TARGET) $(LDFLAGS)
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+run: $(TARGET)
+	./$(TARGET) $(LOGDIR)/sample.log
+
+valgrind: $(TARGET)
+	valgrind --leak-check=full --show-leak-kinds=all ./$(TARGET) $(LOGDIR)/sample.log
+
+clean:
+	rm -f $(OBJDIR)/*.o $(TARGET)
+
+.PHONY: all clean run test-large valgrind
