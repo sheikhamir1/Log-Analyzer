@@ -1,13 +1,3 @@
----
-
-# Log Analyzer — v1.0 (CLI)
-
-**Status:** Stable
-**Platform:** Windows (MinGW / GCC)
-**Language:** C (C99)
-
----
-
 ## Overview
 
 Log Analyzer is a **command-line log analysis tool written in C** that processes large log files efficiently using a **streaming design**.
