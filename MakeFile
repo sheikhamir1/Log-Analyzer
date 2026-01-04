@@ -24,6 +24,11 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 run: $(TARGET)
 	./$(TARGET) $(LOGDIR)/sample.log
 
+# test-large: $(TARGET)
+# 	@echo "Generating large test file..."
+# 	@python3 -c "for i in range(1000000): print(f'2025-01-01 12:00:00 INFO Normal operation line {i}'); print(f'2025-01-01 12:00:00 WARN Low disk space'); print(f'2025-01-01 12:00:00 ERROR Database connection failed') if i % 1000 == 0 else None" > $(LOGDIR)/large_test.log
+# 	./$(TARGET) $(LOGDIR)/large_test.log --top-errors 3
+
 valgrind: $(TARGET)
 	valgrind --leak-check=full --show-leak-kinds=all ./$(TARGET) $(LOGDIR)/sample.log
 

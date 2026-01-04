@@ -31,7 +31,7 @@ int main (int argc , char *argv[]) {
     int errors_only = 0;
     int top_n = 10;
 
-    for (int i = 0 ; i < argv ; i++) {
+    for (int i = 0 ; i < argc ; i++) {
         if (strcmp(argv[i], "--help") == 0) {
             print_usage(argv[0]);
             return 0;
@@ -45,7 +45,7 @@ int main (int argc , char *argv[]) {
                 top_n = atoi(argv[++i]);
                 if ( top_n <= 0) top_n = 10;
             }
-        } else if (argv[i][0] != "-") {
+        } else if (argv[i][0] != '-') {
             filename = argv[i];  // ./loganalyzer server.log --errors-only
         }
     }
@@ -66,7 +66,7 @@ int main (int argc , char *argv[]) {
     //initailize analyzer
     AnalysisResult *result = init_analyzer();
     if (!result) {
-        fprintf(stderr, "Error: Memory Allocation Failed'%s'\n");
+        fprintf(stderr, "Error: Memory Allocation Failed\n");
         close_file(reader);
         return 1;
     }

@@ -20,7 +20,7 @@ typedef struct {
 } AnalysisResult;
 
 AnalysisResult* init_analyzer(); // AnalysisResult *result = init_analyzer();
-void process_log_line(const AnalysisResult * result , const LogEntry *entry);  // process_log_line(result , &entry);
+void process_log_line( AnalysisResult * result , const LogEntry *entry);  // process_log_line(result , &entry);
 void get_top_errors(const AnalysisResult *result , int top_n, ErrorEntry *top_errors);
 void cleanup_analyzer(AnalysisResult *result);
 
