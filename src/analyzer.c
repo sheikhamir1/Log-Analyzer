@@ -11,6 +11,7 @@ AnalysisResult* init_analyzer(){
     result->total_line = 0;
     result->info_count = 0;
     result->warn_count = 0;
+    result->error_count = 0;
     result->error_count_unique = 0;
     result->error_capacity = 100;
     

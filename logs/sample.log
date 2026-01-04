@@ -12,6 +12,11 @@
 2025-09-10 12:02:05 ERROR Timeout while reading request
 2025-09-10 12:02:10 INFO Processing request ID 12346
 2025-09-10 12:02:15 ERROR Timeout while reading request
+2025-09-10 12:02:15 ERROR Timeout while reading request
+2025-09-10 12:02:15 ERROR Timeout while reading request
+2025-09-10 12:02:15 ERROR Timeout while reading request
+2025-09-10 12:02:15 ERROR Timeout while reading request
+2025-09-10 12:02:15 ERROR Timeout while reading request
 2025-09-10 12:02:20 INFO Application shutdown initiated
 2025-09-10 12:02:21 ERROR Database connection failed
 2025-09-10 12:02:22 INFO Cleanup completed
